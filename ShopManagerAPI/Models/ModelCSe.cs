@@ -17,30 +17,42 @@ namespace ShopManagerAPI.Model
 
 
         // Define Column get set
-        [Column(IsPrimaryKey = true, IsDbGenerated = true, Name = "id")]
+        [Column(Name = "id", IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }
+
         [Column(Name ="sDate")]
-        public DateTime sDate { get; set; }
-        [Column(Name ="discount")]
+        public DateTime SDate { get; set; }
+
+
+        [Column(Name = "discount", DbType = "float")]
         public float Discount { get; set; }
-        [Column(Name ="sum")]
+
+        [Column(Name = "sum", DbType = "float")]
         public float Sum { get; set; }
-        [Column(Name ="cliSum")]
+
+        [Column(Name ="cliSum", DbType = "float")]
         public float CliSum { get; set; }
-        [Column(Name ="cliReturn")]
+
+        [Column(Name ="cliReturn", DbType = "float")]
         public float CliReturn { get; set; }
+
         [Column(Name = "idClient")]
         public int IdClient { get; set; }
-        [Column(Name = "T_Code_01")]
-        public string T_Code_01 { get; set; }
+
         [Column(Name = "withPrescription")]
         public bool WithPrescription { get; set; }
+
+        [Column(Name = "T_Code_01")]
+        public string T_Code_01 { get; set; }
+
         [Column(Name = "T_Code_02")]
         public string T_Code_02 { get; set; }
+
         [Column(Name = "I_Type")]
-        public int I_Type { get; set; }
+        public int? I_Type { get; set; }
+
         [Column(Name = "I_Status")]
-        public int I_Status { get; set; }
+        public int? I_Status { get; set; }
         [Association(Name =MyConst.FK_CS_TO_CSE, Storage ="_CS", OtherKey ="IdCS")]
         public EntitySet<ModelCS> CS
         {
@@ -53,5 +65,6 @@ namespace ShopManagerAPI.Model
                 this._CS.Assign(value);
             }
         }
+
     }
 }

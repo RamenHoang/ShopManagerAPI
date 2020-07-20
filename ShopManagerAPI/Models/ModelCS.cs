@@ -18,32 +18,46 @@ namespace ShopManagerAPI.Model
         // Define column get set
         [Column(IsPrimaryKey = true, IsDbGenerated = true, Name = "id")]
         public int Id { get; set; }
+
         [Column(Name = "idSePr")]
         public int? IdSePr { get; set; }
+
         [Column(Name = "idProdInfo")]
         public int? IdProdInfo { get; set; }
-        [Column(Name ="sPr")]
+
+        [Column(Name ="sPr", DbType = "float")]
         public float? SPr { get; set; }
-        [Column(Name ="sRatio")]
+
+        [Column(Name ="sRatio", DbType = "float")]
         public float? SRatio { get; set; }
-        [Column(Name = "q")]
+
+        [Column(Name = "q", DbType = "float")]
         public float? Q { get; set; }
+
         [Column(Name ="unit")]
         public string Unit { get; set; }
+
         [Column(Name ="idCS")]
         public int? IdCS { get; set; }
+
         [Column(Name ="st")]
         public bool? St { get; set; }
+
         [Column(Name = "idPrescription")]
         public int IdPrescription { get; set; }
+
         [Column(Name = "T_Description_01")]
         public string T_Description_01 { get; set; }
+
         [Column(Name = "T_Description_02")]
         public string T_Description_02 { get; set; }
+
         [Column(Name ="I_Option_01")]
         public int? I_Option_01 { get; set; }
+
         [Column(Name = "I_Option_02")]
         public int? I_Option_02 { get; set; }
+
         [Association(Name = MyConst.FK_CS_TO_CSE, Storage = "_CSe", ThisKey = "IdCS", IsForeignKey = true)]
         public ModelCSe CSe
         {
