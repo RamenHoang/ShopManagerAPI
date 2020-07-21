@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ShopManagerAPI.Const;
+using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Web;
@@ -9,6 +11,10 @@ namespace ShopManagerAPI.Models
     [Table(Name = "ProductInfo")]
     public class ModelProductInfo
     {
+        private EntitySet<ModelRSProductSupplier> _RSProductSuppliers = new EntitySet<ModelRSProductSupplier>();
+        private EntitySet<ModelInputPriceC> _InputPriceCs = new EntitySet<ModelInputPriceC>();
+        private EntitySet<ModelSellingPrice> _SellingPrices = new EntitySet<ModelSellingPrice>();
+
         [Column(Name = "id", IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }
 
@@ -52,6 +58,43 @@ namespace ShopManagerAPI.Models
         [Column(Name = "T_Description_02")]
         public string TDescription02 { get; set; }
 
+        [Association(Name = MyConst.FK_RS_PRODUCT_SUPPLIER_TO_PRODUCT_INFO, Storage = "_RSProductSuppliers", OtherKey = "IdProduct")]
+        public EntitySet<ModelRSProductSupplier> RSProductSuppliers
+        {
+            get
+            {
+                return this._RSProductSuppliers;
+            }
+            set
+            {
+                this._RSProductSuppliers.Assign(value);
+            }
+        }
 
+        [Association(Name = MyConst.FK_INPUT_PRICE_C_TO_PRODUCT_INFO, Storage = "_SellingPrices", OtherKey = "IdProduct")]
+        public EntitySet<ModelInputPriceC> InputPriceCs
+        {
+            get
+            {
+                return this._InputPriceCs;
+            }
+            set
+            {
+                this._InputPriceCs.Assign(value);
+            }
+        }
+
+        [Association(Name = MyConst.FK_SELLING_PRICE_TO_PRODUCT_INFO, Storage = "_SellingPrices", OtherKey = "IdProduct")]
+        public EntitySet<ModelSellingPrice> SellingPrices
+        {
+            get
+            {
+                return this._SellingPrices;
+            }
+            set
+            {
+                this._SellingPrices.Assign(value);
+            }
+        }
     }
 }

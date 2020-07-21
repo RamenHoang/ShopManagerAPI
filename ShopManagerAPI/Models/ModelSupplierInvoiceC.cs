@@ -12,6 +12,7 @@ namespace ShopManagerAPI.Models
     public class ModelSupplierInvoiceC
     {
         private EntityRef<ModelSupplier> _Supplier = new EntityRef<ModelSupplier>();
+        private EntitySet<ModelInputPriceC> _InputPriceCs = new EntitySet<ModelInputPriceC>();
 
         [Column(Name = "id", IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }
@@ -62,6 +63,19 @@ namespace ShopManagerAPI.Models
             set
             {
                 this._Supplier.Entity = value;
+            }
+        }
+
+        [Association(Name = MyConst.FK_INPUT_PRICE_C_TO_SUPPLIER_INVOICE_C, Storage = "_InputPriceCs", OtherKey = "IdInvoice")]
+        public EntitySet<ModelInputPriceC> InputPriceCs
+        {
+            get
+            {
+                return this._InputPriceCs;
+            }
+            set
+            {
+                this._InputPriceCs.Assign(value);
             }
         }
     }
