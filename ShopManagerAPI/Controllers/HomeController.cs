@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Http;
 
 namespace ShopManagerAPI.Controllers
 {
-    public class HomeController : Controller
+    [RoutePrefix("")]
+    public class HomeController : ApiController
     {
-        public ActionResult Index()
+        [Route("")]
+        public string Get()
         {
-            ViewBag.Title = "Home Page";
-
-            return View();
+            return "Welcom to Pharmacy";
         }
     }
 }
