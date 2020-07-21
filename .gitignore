@@ -403,3 +403,6 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+
+ShopManagerAPI/Const/MyConst.cs
+.vs
