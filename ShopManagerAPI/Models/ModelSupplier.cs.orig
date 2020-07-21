@@ -13,8 +13,11 @@ namespace ShopManagerAPI.Models
     {
         private EntitySet<ModelSupplierInvoiceB> _SupplierInvoiceBs = new EntitySet<ModelSupplierInvoiceB>();
         private EntitySet<ModelSupplierInvoiceC> _SupplierInvoiceCs = new EntitySet<ModelSupplierInvoiceC>();
+<<<<<<< HEAD
         private EntitySet<ModelRSProductSupplier> _RSProductSuppliers = new EntitySet<ModelRSProductSupplier>();
+=======
         private EntitySet<ModelSupplierInvoice> _SupplierInvoices = new EntitySet<ModelSupplierInvoice>();
+>>>>>>> 2835350f6cd5e83015537b1c884b22250f27567f
 
         [Column(Name = "id", IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }
@@ -56,8 +59,6 @@ namespace ShopManagerAPI.Models
                 this._SupplierInvoiceCs.Assign(value);
             }
         }
-    }
-}
 
 
         [Association(Name = MyConst.FK_RS_PRODUCT_SUPPLIER_TO_SUPPLIER, Storage = "_RSProductSuppliers", OtherKey = "IdSupplier")]
@@ -72,7 +73,8 @@ namespace ShopManagerAPI.Models
                 this._RSProductSuppliers.Assign(value);
             }
         }
-	[Association(Name = MyConst.FK_SUPPLIER_INVOICE_TO_SUPPLIER, Storage = "_SupplierInvoice", OtherKey = "IdSupplier")]
+
+        [Association(Name = MyConst.FK_SUPPLIER_INVOICE_TO_SUPPLIER, Storage = "_SupplierInvoice", OtherKey = "IdSupplier")]
         public EntitySet<ModelSupplierInvoice> SupplierInvoices
         {
             get
@@ -81,7 +83,7 @@ namespace ShopManagerAPI.Models
             }
             set
             {
-                this._SupplierInvoices.Assign(value);
+                this._SupplierInvoices = value;
             }
         }
     }
