@@ -1,4 +1,5 @@
 ﻿using ShopManagerAPI.Const;
+using ShopManagerAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Linq;
@@ -56,9 +57,6 @@ namespace ShopManagerAPI.Models
                 this._SupplierInvoiceCs.Assign(value);
             }
         }
-    }
-}
-
 
         [Association(Name = MyConst.FK_RS_PRODUCT_SUPPLIER_TO_SUPPLIER, Storage = "_RSProductSuppliers", OtherKey = "IdSupplier")]
         public EntitySet<ModelRSProductSupplier> RSProductSuppliers
@@ -72,7 +70,8 @@ namespace ShopManagerAPI.Models
                 this._RSProductSuppliers.Assign(value);
             }
         }
-	[Association(Name = MyConst.FK_SUPPLIER_INVOICE_TO_SUPPLIER, Storage = "_SupplierInvoice", OtherKey = "IdSupplier")]
+	
+        [Association(Name = MyConst.FK_SUPPLIER_INVOICE_TO_SUPPLIER, Storage = "_SupplierInvoice", OtherKey = "IdSupplier")]
         public EntitySet<ModelSupplierInvoice> SupplierInvoices
         {
             get
