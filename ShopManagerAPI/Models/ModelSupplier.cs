@@ -70,6 +70,7 @@ namespace ShopManagerAPI.Models
                 this._RSProductSuppliers.Assign(value);
             }
         }
+
         [Association(Name = MyConst.FK_SUPPLIER_INVOICE_TO_SUPPLIER, Storage = "_SupplierInvoice", OtherKey = "IdSupplier")]
         public EntitySet<ModelSupplierInvoice> SupplierInvoices
         {
