@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ShopManagerAPI.Const;
+using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Web;
@@ -7,8 +9,13 @@ using System.Web;
 namespace ShopManagerAPI.Models
 {
     [Table(Name = "InputPrice")]
-    public class ModelInputPrice
+    public partial class ModelInputPrice
     {
+        private EntityRef<ModelProductInfo> _ProductInfo = new EntityRef<ModelProductInfo>();
+        private EntityRef<ModelProductUnit> _ProductUnit = new EntityRef<ModelProductUnit>();
+        private EntityRef<ModelSupplierInvoice> _SupplierInvoice = new EntityRef<ModelSupplierInvoice>();
+
+
         [Column(Name = "id", IsDbGenerated = true, IsPrimaryKey = true)]
         public int Id { get; set; }
 
@@ -65,5 +72,45 @@ namespace ShopManagerAPI.Models
 
         [Column(Name = "idUnit_Ratio")]
         public int? idUnit_Ratio { get; set; }
+
+        [Association(Name = MyConst.FK_INPUT_PRICE_TO_PRODUCT_INFO, IsForeignKey = true, Storage = "_ProductInfo", ThisKey = "IdProduct")]
+        public ModelProductInfo ProductInfo
+        { 
+           get
+           {
+                return this._ProductInfo.Entity;
+           }
+           set
+           {
+                this._ProductInfo.Entity = value;
+           }
+        }
+
+        [Association(Name = MyConst.FK_INPUT_PRICE_TO_PRODUCT_UNIT, IsForeignKey = true, Storage = "_ProductUnit", ThisKey = "IdUnitImport")]
+        public ModelProductUnit ProductUnit
+        {
+            get
+            {
+                return this._ProductUnit.Entity;
+            }
+            set
+            {
+                this._ProductUnit.Entity = value;
+            }
+        }
+
+        [Association(Name = MyConst.FK_INPUT_PRICE_TO_SUPPLIER_INVOICE, IsForeignKey = true, Storage = "_SupplierInvoice", ThisKey = "IdInvoice")]
+        public ModelSupplierInvoice SupplierInvoice
+        {
+            get
+            {
+                return this._SupplierInvoice.Entity;
+            }
+            set
+            {
+                this._SupplierInvoice.Entity = value;
+            }
+        }
+
     }
 }
