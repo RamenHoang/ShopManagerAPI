@@ -14,5 +14,8 @@ namespace ShopManagerAPI.Const
         public const string DATABASE_USER = "thienphat";
         public const string DATABASE_PSW = "thienphat";
         public const string FK_CS_TO_CSE = "CS$CSeCS";
+        public const string FK_SUPPLIERINVOICEB_TO_SUPPLIER = "SupplierInvoice_B$SupplierSupplierInvoice";
+        public const string FK_SUPPLIERINVOICEC_TO_SUPPLIER = "SupplierInvoice_C$SupplierSupplierInvoice";
+        
     }
 }

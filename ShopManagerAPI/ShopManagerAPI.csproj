@@ -169,6 +169,14 @@
     </Compile>
     <Compile Include="Models\ModelCS.cs" />
     <Compile Include="Models\ModelCSe.cs" />
+    <Compile Include="Models\ModelInputPriceC.cs" />
+    <Compile Include="Models\ModelProductInfo.cs" />
+    <Compile Include="Models\ModelProductUnit.cs" />
+    <Compile Include="Models\ModelRSProductSupplier.cs" />
+    <Compile Include="Models\ModelSellingPrice.cs" />
+    <Compile Include="Models\ModelSupplier.cs" />
+    <Compile Include="Models\ModelSupplierInvoiceB.cs" />
+    <Compile Include="Models\ModelSupplierInvoiceC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
