@@ -125,7 +125,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Const\MyConst.cs" />
     <Compile Include="Const\Template.cs" />
@@ -143,6 +142,7 @@
     <Compile Include="Models\ModelCIP.cs" />
     <Compile Include="Models\ModelCS.cs" />
     <Compile Include="Models\ModelCSe.cs" />
+<<<<<<< HEAD
     <Compile Include="Models\ModelInputPriceC.cs" />
     <Compile Include="Models\ModelProductInfo.cs" />
     <Compile Include="Models\ModelProductUnit.cs" />
@@ -151,10 +151,12 @@
     <Compile Include="Models\ModelSupplier.cs" />
     <Compile Include="Models\ModelSupplierInvoiceB.cs" />
     <Compile Include="Models\ModelSupplierInvoiceC.cs" />
+=======
     <Compile Include="Models\ModelLocation.cs" />
     <Compile Include="Models\ModelPresciption.cs" />
     <Compile Include="Models\ModelPrescriptionContent.cs" />
     <Compile Include="Models\ModelProductUnitRatio.cs" />
+>>>>>>> a92ed5d758f59a26dc905a2bd18aaf89f166ca5f
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
