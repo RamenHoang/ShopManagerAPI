@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ShopManagerAPI.Const;
+using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Web;
@@ -9,6 +11,9 @@ namespace ShopManagerAPI.Models
     [Table(Name ="CIP")]
     public class ModelCIP
     {
+        private EntityRef<ModelProductUnit> _ProductUnit = new EntityRef<ModelProductUnit>();
+
+
         [Column(Name = "id", IsDbGenerated = true, IsPrimaryKey = true)]
         public int Id { get; set; }
 
@@ -16,7 +21,7 @@ namespace ShopManagerAPI.Models
         public int? IdProduct { get; set; }
 
         [Column(Name = "idUnit")]
-        public int? idUnit { get; set; }
+        public int? IdUnit { get; set; }
 
         [Column(Name = "UPr", DbType = "float")]
         public float? UnitProduct { get; set; }
@@ -50,5 +55,18 @@ namespace ShopManagerAPI.Models
 
         [Column(Name = "idInv")]
         public int? IdInvoice { get; set; }
+
+        [Association(Name =MyConst.FK_CPI_TO_PRODUCT_UNIT, IsForeignKey =true, ThisKey = "IdUnit", Storage ="_ProductUnit")]
+        public ModelProductUnit ProductUnit
+        {
+            get
+            {
+                return this._ProductUnit.Entity;
+            }
+            set
+            {
+                this._ProductUnit.Entity = value;
+            }
+        }
     }
 }
