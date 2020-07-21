@@ -136,10 +136,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers.cs" />
     <Compile Include="Helpers\JsonHelpers.cs" />
+    <Compile Include="Models\ModelInputPrice.cs" />
+    <Compile Include="Models\ModelSupplierInvoice.cs" />
+    <Compile Include="Models\ModelCIP.cs" />
     <Compile Include="Models\ModelCS.cs" />
     <Compile Include="Models\ModelCSe.cs" />
+    <Compile Include="Models\ModelLocation.cs" />
+    <Compile Include="Models\ModelPresciption.cs" />
+    <Compile Include="Models\ModelPrescriptionContent.cs" />
+    <Compile Include="Models\ModelProductUnitRatio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
