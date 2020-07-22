@@ -14,6 +14,8 @@ namespace ShopManagerAPI.Models
         private EntitySet<ModelRSProductSupplier> _RSProductSuppliers = new EntitySet<ModelRSProductSupplier>();
         private EntitySet<ModelSellingPrice> _SellingPrices = new EntitySet<ModelSellingPrice>();
         private EntitySet<ModelProductUnitRatio> _ProductUnitRatio = new EntitySet<ModelProductUnitRatio>();
+        private EntitySet<ModelInputPrice> _InputPrices = new EntitySet<ModelInputPrice>();
+        private EntitySet<ModelPrescriptionContent> _PrescriptionContent = new EntitySet<ModelPrescriptionContent>();
 
         [Column(Name = "id", IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }
@@ -81,6 +83,32 @@ namespace ShopManagerAPI.Models
             set
             {
                 this._SellingPrices.Assign(value);
+            }
+        }
+
+        [Association(Name =MyConst.FK_INPUT_PRICE_C_TO_PRODUCT_INFO, Storage ="_InputPrices", OtherKey = "IdProduct")]
+        public EntitySet<ModelInputPrice> InputPrices
+        {
+            get
+            {
+                return this._InputPrices;
+            }
+            set
+            {
+                this._InputPrices.Assign(value);
+            }
+        }
+
+        [Association(Name =MyConst.FK_PERSCRIPTION_CONTENT_TO_PRODUCT_INFO, Storage ="_PrescriptionContent", OtherKey = "IdProductInfo")]
+        public EntitySet<ModelPrescriptionContent> PrescriptionContents
+        {
+            get
+            {
+                return this._PrescriptionContent;
+            }
+            set
+            {
+                this._PrescriptionContent.Assign(value);
             }
         }
     }
