@@ -19,8 +19,8 @@ namespace ShopManagerAPI.Models
         [Column(Name = "Comment")]
         public string Comment { get; set; }
 
-        [Column(Name = "BarCode")]
-        public string BarCode { get; set; }
+        [Column(Name = "DetailVisible")]
+        public bool DetailVisible { get; set; }
 
         [Column(Name = "RealAmount", DbType = "float")]
         public float RealAmount { get; set; }
@@ -31,13 +31,13 @@ namespace ShopManagerAPI.Models
         [Column(Name = "GroupPrescript")]
         public int? GroupPrescript { get; set; }
 
-        [Column(Name = "counter")]
-        public int? Counter { get; set; }
+        [Column(Name = "BarCode")]
+        public string BarCode { get; set; }
 
         [Column(Name = "stopSelling")]
         public bool CtopSelling { get; set; }
 
-        [Column(Name = "DetailVisible")]
-        public bool DetailVisible { get; set; }
+        [Column(Name = "counter")]
+        public int? Counter { get; set; }
     }
 }
