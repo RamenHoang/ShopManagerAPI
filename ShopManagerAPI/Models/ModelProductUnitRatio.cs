@@ -14,7 +14,7 @@ namespace ShopManagerAPI.Models
         private EntityRef<ModelProductInfo> _ProductInfo = new EntityRef<ModelProductInfo>();
         private EntityRef<ModelProductUnit> _ProductUnit = new EntityRef<ModelProductUnit>();
 
-        [Column(Name = "id")]
+        [Column(Name = "id", IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }
 
         [Column(Name = "idUnit")]

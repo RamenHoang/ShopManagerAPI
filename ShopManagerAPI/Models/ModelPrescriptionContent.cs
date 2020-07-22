@@ -15,6 +15,9 @@ namespace ShopManagerAPI.Models
         private EntityRef<ModelProductUnit> _ProductUnit = new EntityRef<ModelProductUnit>();
         private EntityRef<ModelPresciption> _Prescription = new EntityRef<ModelPresciption>();
 
+        [Column(Name = "", IsPrimaryKey = true)]
+        public int? id;
+
         [Column(Name = "idPrescription")]
         public int IdPrescription { get; set; }
 

@@ -11,12 +11,12 @@ namespace ShopManagerAPI.DAO
 
         public CSeDAO()
         {
-            db = new SQLServer();
+            db = SQLServer.getDB();
         }
 
         public List<ModelCSe> GetAll()
         {
-            List<ModelCSe> CSes = (List<ModelCSe>)db.CSe.Where(cse => cse.Id < 100).ToList();
+            List<ModelCSe> CSes = (List<ModelCSe>)db.CSe.Take(100);
             return CSes;
         }
         public ModelCSe GetById(int id)
