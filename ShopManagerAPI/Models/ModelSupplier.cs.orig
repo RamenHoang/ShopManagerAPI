@@ -1,4 +1,5 @@
 ﻿using ShopManagerAPI.Const;
+using ShopManagerAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Linq;
@@ -13,11 +14,8 @@ namespace ShopManagerAPI.Models
     {
         private EntitySet<ModelSupplierInvoiceB> _SupplierInvoiceBs = new EntitySet<ModelSupplierInvoiceB>();
         private EntitySet<ModelSupplierInvoiceC> _SupplierInvoiceCs = new EntitySet<ModelSupplierInvoiceC>();
-<<<<<<< HEAD
         private EntitySet<ModelRSProductSupplier> _RSProductSuppliers = new EntitySet<ModelRSProductSupplier>();
-=======
         private EntitySet<ModelSupplierInvoice> _SupplierInvoices = new EntitySet<ModelSupplierInvoice>();
->>>>>>> 2835350f6cd5e83015537b1c884b22250f27567f
 
         [Column(Name = "id", IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }
@@ -60,7 +58,6 @@ namespace ShopManagerAPI.Models
             }
         }
 
-
         [Association(Name = MyConst.FK_RS_PRODUCT_SUPPLIER_TO_SUPPLIER, Storage = "_RSProductSuppliers", OtherKey = "IdSupplier")]
         public EntitySet<ModelRSProductSupplier> RSProductSuppliers
         {
@@ -73,7 +70,10 @@ namespace ShopManagerAPI.Models
                 this._RSProductSuppliers.Assign(value);
             }
         }
-
+<<<<<<< HEAD
+=======
+	
+>>>>>>> eb04f826e11830202030e56c17dd148dc151211e
         [Association(Name = MyConst.FK_SUPPLIER_INVOICE_TO_SUPPLIER, Storage = "_SupplierInvoice", OtherKey = "IdSupplier")]
         public EntitySet<ModelSupplierInvoice> SupplierInvoices
         {
@@ -83,8 +83,12 @@ namespace ShopManagerAPI.Models
             }
             set
             {
-                this._SupplierInvoices = value;
+                this._SupplierInvoices.Assign(value);
             }
         }
     }
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> eb04f826e11830202030e56c17dd148dc151211e
