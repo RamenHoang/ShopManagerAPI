@@ -13,11 +13,14 @@ namespace ShopManagerAPI.Models
     {
         private EntitySet<ModelRSProductSupplier> _RSProductSuppliers = new EntitySet<ModelRSProductSupplier>();
         private EntitySet<ModelSellingPrice> _SellingPrices = new EntitySet<ModelSellingPrice>();
+<<<<<<< HEAD
         private EntitySet<ModelProductUnitRatio> _ProductUnitRatios = new EntitySet<ModelProductUnitRatio>();
         private EntityRef<ModelLocation> _Location = new EntityRef<ModelLocation>();
+=======
         private EntitySet<ModelProductUnitRatio> _ProductUnitRatio = new EntitySet<ModelProductUnitRatio>();
         private EntitySet<ModelInputPrice> _InputPrices = new EntitySet<ModelInputPrice>();
         private EntitySet<ModelPrescriptionContent> _PrescriptionContent = new EntitySet<ModelPrescriptionContent>();
+>>>>>>> e40a39af28cd7f0ea2a9e98cb4df6bbf07724598
 
         [Column(Name = "id", IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }
@@ -87,7 +90,8 @@ namespace ShopManagerAPI.Models
                 this._SellingPrices.Assign(value);
             }
         }
-    
+
+<<<<<<< HEAD
         [Association(Name = MyConst.FK_PRODUCT_UNIT_RATIO_TO_PRODUCT_INFO, Storage = "_ProductUnitRatios", OtherKey = "IdProduct")]
         public EntitySet<ModelProductUnitRatio> ProductUnitRatios
         {
@@ -111,10 +115,8 @@ namespace ShopManagerAPI.Models
             set
             {
                 this._Location.Entity = value;
-            }
-        }
-
-        [Association(Name =MyConst.FK_INPUT_PRICE_TO_PRODUCT_INFO, Storage ="_InputPrices", OtherKey = "IdProduct")]
+=======
+        [Association(Name =MyConst.FK_INPUT_PRICE_C_TO_PRODUCT_INFO, Storage ="_InputPrices", OtherKey = "IdProduct")]
         public EntitySet<ModelInputPrice> InputPrices
         {
             get
@@ -137,7 +139,8 @@ namespace ShopManagerAPI.Models
             set
             {
                 this._PrescriptionContent.Assign(value);
+>>>>>>> e40a39af28cd7f0ea2a9e98cb4df6bbf07724598
             }
         }
-}
+    }
 }
