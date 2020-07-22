@@ -44,6 +44,9 @@ namespace ShopManagerAPI.Models
         [Column(Name = "order")]
         public int? Order { get; set; }
 
+        [Column(Name ="F_Ratio_Base")]
+        public float? F_Ratio_Base { get; set; }
+
         [Association(Name = MyConst.FK_SELLING_PRICE_TO_PRODUCT_INFO, Storage = "_ProductInfo", IsForeignKey = true, ThisKey = "IdProduct")]
         public ModelProductInfo ProductInfo
         {

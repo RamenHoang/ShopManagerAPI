@@ -31,6 +31,9 @@ namespace ShopManagerAPI.Models
         [Column(Name = "UnitPriceNoVAT", DbType = "float")]
         public float? UnitPriceNoVAT { get; set; }
 
+        [Column(Name ="VATPercent", DbType ="float")]
+        public float VATPercent { get; set; }
+
         [Column(Name = "AmountWithVAT", DbType = "float")]
         public float AmountWithVAT { get; set; }
 
@@ -61,17 +64,17 @@ namespace ShopManagerAPI.Models
         [Column(Name = "stock")]
         public float Stock { get; set; }
 
-        [Column(Name = "QuantityBase", DbType = "float")]
-        public float? QuantityBase { get; set; }
+        [Column(Name = "F_Q_Base", DbType = "float")]
+        public float? F_Q_Base { get; set; }
 
-        [Column(Name = "RQBase", DbType = "float")]
-        public float? RQBase { get; set; }
+        [Column(Name = "F_RQ_Base", DbType = "float")]
+        public float? F_RQ_Base { get; set; }
 
-        [Column(Name = "RatioBase", DbType = "float")]
-        public float? RatioBase { get; set; }
+        [Column(Name = "F_Ratio_Base", DbType = "float")]
+        public float? F_Ratio_Base { get; set; }
 
-        [Column(Name = "idUnit_Ratio")]
-        public int? idUnit_Ratio { get; set; }
+        [Column(Name = "I_Ratio_Unit")]
+        public int? I_Ratio_Unit { get; set; }
 
         [Association(Name = MyConst.FK_INPUT_PRICE_TO_PRODUCT_INFO, IsForeignKey = true, Storage = "_ProductInfo", ThisKey = "IdProduct")]
         public ModelProductInfo ProductInfo
