@@ -12,8 +12,6 @@ namespace ShopManagerAPI.Models
     [Table(Name = "Supplier")]
     public class ModelSupplier
     {
-        private EntitySet<ModelSupplierInvoiceB> _SupplierInvoiceBs = new EntitySet<ModelSupplierInvoiceB>();
-        private EntitySet<ModelSupplierInvoiceC> _SupplierInvoiceCs = new EntitySet<ModelSupplierInvoiceC>();
         private EntitySet<ModelRSProductSupplier> _RSProductSuppliers = new EntitySet<ModelRSProductSupplier>();
         private EntitySet<ModelSupplierInvoice> _SupplierInvoices = new EntitySet<ModelSupplierInvoice>();
 
@@ -31,32 +29,6 @@ namespace ShopManagerAPI.Models
 
         [Column(Name = "Email")]
         public string Email { get; set; }
-
-        [Association(Name = MyConst.FK_SUPPLIERINVOICEB_TO_SUPPLIER, Storage = "_SupplierInvoiceBs", OtherKey = "IdSupplier")]
-        public EntitySet<ModelSupplierInvoiceB> SupplierInvoiceBs
-        {
-            get
-            {
-                return this._SupplierInvoiceBs;
-            }
-            set
-            {
-                this._SupplierInvoiceBs.Assign(value);
-            }
-        }
-
-        [Association(Name = MyConst.FK_SUPPLIERINVOICEC_TO_SUPPLIER, Storage = "_SupplierInvoiceCs", OtherKey = "IdSupplier")]
-        public EntitySet<ModelSupplierInvoiceC> SupplierInvoiceCs
-        {
-            get
-            {
-                return this._SupplierInvoiceCs;
-            }
-            set
-            {
-                this._SupplierInvoiceCs.Assign(value);
-            }
-        }
 
         [Association(Name = MyConst.FK_RS_PRODUCT_SUPPLIER_TO_SUPPLIER, Storage = "_RSProductSuppliers", OtherKey = "IdSupplier")]
         public EntitySet<ModelRSProductSupplier> RSProductSuppliers
