@@ -13,7 +13,8 @@ namespace ShopManagerAPI.Models
     {
         private EntitySet<ModelRSProductSupplier> _RSProductSuppliers = new EntitySet<ModelRSProductSupplier>();
         private EntitySet<ModelSellingPrice> _SellingPrices = new EntitySet<ModelSellingPrice>();
-        private EntitySet<ModelProductUnitRatio> _ProductUnitRatio = new EntitySet<ModelProductUnitRatio>();
+        private EntitySet<ModelProductUnitRatio> _ProductUnitRatios = new EntitySet<ModelProductUnitRatio>();
+        private EntityRef<ModelLocation> _Location = new EntityRef<ModelLocation>();
 
         [Column(Name = "id", IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }
@@ -81,6 +82,32 @@ namespace ShopManagerAPI.Models
             set
             {
                 this._SellingPrices.Assign(value);
+            }
+        }
+
+        [Association(Name = MyConst.FK_PRODUCT_UNIT_RATIO_TO_PRODUCT_INFO, Storage = "_ProductUnitRatios", OtherKey = "IdProduct")]
+        public EntitySet<ModelProductUnitRatio> ProductUnitRatios
+        {
+            get
+            {
+                return this._ProductUnitRatios;
+            }
+            set
+            {
+                this._ProductUnitRatios.Assign(value);
+            }
+        }
+
+        [Association(Name = MyConst.FK_PRODUCT_INFO_TO_LOCATION, Storage = "_Location", IsForeignKey = true, ThisKey = "IdLocation")]
+        public ModelLocation Location
+        {
+            get
+            {
+                return this._Location.Entity;
+            }
+            set
+            {
+                this._Location.Entity = value;
             }
         }
     }

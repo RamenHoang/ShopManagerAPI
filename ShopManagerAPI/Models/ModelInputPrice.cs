@@ -23,7 +23,7 @@ namespace ShopManagerAPI.Models
         public int IdProduct { get; set; }
 
         [Column(Name = "idUnit_Import")]
-        public int IdUnitImport { get; set; }
+        public int IdProductUnit { get; set; }
 
         [Column(Name = "Quantity", DbType = "float")]
         public float Quantity { get; set; }
@@ -89,7 +89,7 @@ namespace ShopManagerAPI.Models
            }
         }
 
-        [Association(Name = MyConst.FK_INPUT_PRICE_TO_PRODUCT_UNIT, IsForeignKey = true, Storage = "_ProductUnit", ThisKey = "IdUnitImport")]
+        [Association(Name = MyConst.FK_INPUT_PRICE_TO_PRODUCT_UNIT, IsForeignKey = true, Storage = "_ProductUnit", ThisKey = "IdProductUnit")]
         public ModelProductUnit ProductUnit
         {
             get

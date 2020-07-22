@@ -60,7 +60,7 @@ namespace ShopManagerAPI.Models
             }
         }
 
-        [Association(Name = MyConst.FK_SELLING_PROCE_TO_PRODUCT_UNIT, Storage = "_ProductUnit", IsForeignKey = true, ThisKey = "IdProductUnit")]
+        [Association(Name = MyConst.FK_SELLING_PRICE_TO_PRODUCT_UNIT, Storage = "_ProductUnit", IsForeignKey = true, ThisKey = "IdProductUnit")]
         public ModelProductUnit ProductUnit
         {
             get
