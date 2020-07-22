@@ -209,3 +209,7 @@ C:/Users/Lenovo/Desktop/Ninh Thuan/C#/ShopManagerAPI/ShopManagerAPI/obj/Debug/Sh
 /Users/ramen/Projects/ABC/ShopManagerAPI/obj/Debug/ShopManagerAPI.csproj.CopyComplete
 /Users/ramen/Projects/ABC/ShopManagerAPI/obj/Debug/ShopManagerAPI.dll
 /Users/ramen/Projects/ABC/ShopManagerAPI/obj/Debug/ShopManagerAPI.pdb
+C:\Users\Lenovo\Desktop\Ninh Thuan\C#\ShopManagerAPI\ShopManagerAPI\obj\Debug\ShopManagerAPI.csprojAssemblyReference.cache
+C:\Users\Lenovo\Desktop\Ninh Thuan\C#\ShopManagerAPI\ShopManagerAPI\obj\Debug\ShopManagerAPI.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\Ninh Thuan\C#\ShopManagerAPI\ShopManagerAPI\obj\Debug\ShopManagerAPI.dll
+C:\Users\Lenovo\Desktop\Ninh Thuan\C#\ShopManagerAPI\ShopManagerAPI\obj\Debug\ShopManagerAPI.pdb

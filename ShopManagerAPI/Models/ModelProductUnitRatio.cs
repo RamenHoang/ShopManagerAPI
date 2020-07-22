@@ -18,7 +18,7 @@ namespace ShopManagerAPI.Models
         public int Id { get; set; }
 
         [Column(Name = "idUnit")]
-        public int IdUnit { get; set; }
+        public int IdProductUnit { get; set; }
 
         [Column(Name = "idProduct")]
         public int IdProduct { get; set; }
@@ -42,7 +42,7 @@ namespace ShopManagerAPI.Models
             }
         }
 
-        [Association(Name = MyConst.FK_PRODUCT_UNIT_RATIO_TO_PRODUCT_UNIT, IsForeignKey = true, Storage = "_ProductUnit", ThisKey = "IdUnit")]
+        [Association(Name = MyConst.FK_PRODUCT_UNIT_RATIO_TO_PRODUCT_UNIT, IsForeignKey = true, Storage = "_ProductUnit", ThisKey = "IdProductUnit")]
         public ModelProductUnit SupplierInvoice
         {
             get
