@@ -15,6 +15,9 @@ namespace ShopManagerAPI.Models
         private EntitySet<ModelSellingPrice> _SellingPrices = new EntitySet<ModelSellingPrice>();
         private EntitySet<ModelProductUnitRatio> _ProductUnitRatios = new EntitySet<ModelProductUnitRatio>();
         private EntityRef<ModelLocation> _Location = new EntityRef<ModelLocation>();
+        private EntitySet<ModelProductUnitRatio> _ProductUnitRatio = new EntitySet<ModelProductUnitRatio>();
+        private EntitySet<ModelInputPrice> _InputPrices = new EntitySet<ModelInputPrice>();
+        private EntitySet<ModelPrescriptionContent> _PrescriptionContent = new EntitySet<ModelPrescriptionContent>();
 
         [Column(Name = "id", IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }
@@ -84,8 +87,8 @@ namespace ShopManagerAPI.Models
                 this._SellingPrices.Assign(value);
             }
         }
-
-        [Association(Name = MyConst.FK_PRODUCT_UNIT_RATIO_TO_PRODUCT_INFO, Storage = "_ProductUnitRatios", OtherKey = "IdProduct")]
+    
+[Association(Name = MyConst.FK_PRODUCT_UNIT_RATIO_TO_PRODUCT_INFO, Storage = "_ProductUnitRatios", OtherKey = "IdProduct")]
         public EntitySet<ModelProductUnitRatio> ProductUnitRatios
         {
             get
@@ -110,5 +113,30 @@ namespace ShopManagerAPI.Models
                 this._Location.Entity = value;
             }
         }
-    }
+Association(Name =MyConst.FK_INPUT_PRICE_C_TO_PRODUCT_INFO, Storage ="_InputPrices", OtherKey = "IdProduct")]
+        public EntitySet<ModelInputPrice> InputPrices
+        {
+            get
+            {
+                return this._InputPrices;
+            }
+            set
+            {
+                this._InputPrices.Assign(value);
+            }
+        }
+
+        [Association(Name =MyConst.FK_PERSCRIPTION_CONTENT_TO_PRODUCT_INFO, Storage ="_PrescriptionContent", OtherKey = "IdProductInfo")]
+        public EntitySet<ModelPrescriptionContent> PrescriptionContents
+        {
+            get
+            {
+                return this._PrescriptionContent;
+            }
+            set
+            {
+                this._PrescriptionContent.Assign(value);
+            }
+        }
+}
 }
