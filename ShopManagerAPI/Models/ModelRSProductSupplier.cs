@@ -14,6 +14,9 @@ namespace ShopManagerAPI.Models
         private EntityRef<ModelSupplier> _Supplier = new EntityRef<ModelSupplier>();
         private EntityRef<ModelProductInfo> _ProductInfo = new EntityRef<ModelProductInfo>();
 
+        [Column(Name = "", IsPrimaryKey = true)]
+        public int? id;
+
         [Column(Name = "idSupplier")]
         public int? IdSupplier { get; set; }
 
@@ -36,7 +39,7 @@ namespace ShopManagerAPI.Models
             }
         }
 
-        [Association(Name = MyConst.FK_RS_PRODUCT_SUPPLIER_TO_PRODUCT_INFO, Storage = "_ProductInfo", IsForeignKey = true, ThisKey = "IdProduct")]
+        [Association(Name = MyConst.FK_RS_PRODUCT_SUPPLIER_TO_PRODUCT_INFO, Storage = "_ProductInfo", ThisKey = "IdProduct", IsForeignKey = true)]
         public ModelProductInfo ProductInfo
         {
             get

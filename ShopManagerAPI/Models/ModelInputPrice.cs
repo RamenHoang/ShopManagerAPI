@@ -34,7 +34,7 @@ namespace ShopManagerAPI.Models
         [Column(Name ="VATPercent", DbType ="float")]
         public float VATPercent { get; set; }
 
-        [Column(Name = "AmountWithVAT", DbType = "float")]
+        [Column(Name = "AmoutWithVAT", DbType = "float")]
         public float AmountWithVAT { get; set; }
 
         [Column(Name = "SeriesLot")]
@@ -102,7 +102,7 @@ namespace ShopManagerAPI.Models
             }
         }
 
-        [Association(Name = MyConst.FK_INPUT_PRICE_TO_SUPPLIER_INVOICE, IsForeignKey = true, Storage = "_SupplierInvoice", ThisKey = "IdInvoice")]
+        [Association(Name = MyConst.FK_INPUT_PRICE_TO_SUPPLIER_INVOICE, IsForeignKey = true, ThisKey = "IdInvoice", Storage = "_SupplierInvoice")]
         public ModelSupplierInvoice SupplierInvoice
         {
             get

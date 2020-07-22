@@ -129,9 +129,11 @@
     <Compile Include="Const\MyConst.cs" />
     <Compile Include="Const\Template.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductInfoController.cs" />
     <Compile Include="Controllers\SellingController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAO\DAO_CSe.cs" />
+    <Compile Include="DAO\DAO_ProductInfo.cs" />
     <Compile Include="Database\SQLServer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

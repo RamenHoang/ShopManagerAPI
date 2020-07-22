@@ -15,7 +15,6 @@ namespace ShopManagerAPI.Models
         private EntitySet<ModelSellingPrice> _SellingPrices = new EntitySet<ModelSellingPrice>();
         private EntitySet<ModelProductUnitRatio> _ProductUnitRatios = new EntitySet<ModelProductUnitRatio>();
         private EntityRef<ModelLocation> _Location = new EntityRef<ModelLocation>();
-        private EntitySet<ModelProductUnitRatio> _ProductUnitRatio = new EntitySet<ModelProductUnitRatio>();
         private EntitySet<ModelInputPrice> _InputPrices = new EntitySet<ModelInputPrice>();
         private EntitySet<ModelPrescriptionContent> _PrescriptionContent = new EntitySet<ModelPrescriptionContent>();
 
