@@ -6,8 +6,8 @@ using System.Web;
 
 namespace ShopManagerAPI.Models
 {
-    [Table(Name ="Presciption")]
-    public class ModelPresciption
+    [Table(Name ="Prescription")]
+    public class ModelPrescription
     {
         // Define Column get set
         [Column(Name = "ID", IsPrimaryKey = true, IsDbGenerated = true)]

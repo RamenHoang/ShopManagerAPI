@@ -17,6 +17,11 @@ namespace ShopManagerAPI.Database
         public Table<ModelCS> CS;
         public Table<ModelCSe> CSe;
         public Table<ModelProductInfo> ProductInfo;
+        public Table<ModelLocation> Location;
+        public Table<ModelSupplier> Suplier;
+        public Table<ModelPrescription> Prescription;
+        public Table<ModelInputPrice> InputPrice;
+
         private static SQLServer DB = null;
         
         public SQLServer() : base(MyConst.connString)
