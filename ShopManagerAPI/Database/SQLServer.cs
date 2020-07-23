@@ -7,7 +7,6 @@ using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using ShopManagerAPI.Model;
 using ShopManagerAPI.Const;
-using Microsoft.Ajax.Utilities;
 using ShopManagerAPI.Models;
 
 namespace ShopManagerAPI.Database
@@ -19,8 +18,8 @@ namespace ShopManagerAPI.Database
         public Table<ModelCSe> CSe;
         public Table<ModelProductInfo> ProductInfo;
         private static SQLServer DB = null;
-        private static string connString = $"Server={MyConst.DATABASE_SRC},{MyConst.DATABASE_PORT};Database={MyConst.DATABASE_NAME};User ID={MyConst.DATABASE_USER};Password={MyConst.DATABASE_PSW}";
-        public SQLServer() : base(connString)
+        
+        public SQLServer() : base(MyConst.connString)
         {
 
         }
