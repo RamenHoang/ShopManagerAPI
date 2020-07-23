@@ -130,10 +130,20 @@
     <Compile Include="Const\Template.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductInfoController.cs" />
+    <Compile Include="Controllers\ProductUnitController.cs" />
+    <Compile Include="Controllers\ProductUnitRatioController.cs" />
     <Compile Include="Controllers\SellingController.cs" />
+    <Compile Include="Controllers\SellingPriceController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
+    <Compile Include="Controllers\SupplierInvoiceController.cs" />
     <Compile Include="DAO\DAO_CSe.cs" />
     <Compile Include="DAO\DAO_ProductInfo.cs" />
+    <Compile Include="DAO\DAO_ProductUnit.cs" />
+    <Compile Include="DAO\DAO_ProductUnitRatio.cs" />
+    <Compile Include="DAO\DAO_SellingPrice.cs" />
+    <Compile Include="DAO\DAO_Supplier.cs" />
+    <Compile Include="DAO\DAO_SupplierInvoice.cs" />
     <Compile Include="Database\SQLServer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

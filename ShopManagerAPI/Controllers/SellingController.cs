@@ -36,7 +36,7 @@ namespace ShopManagerAPI.Controllers
             return JsonHelpers.stringify(queryCSe);
         }
 
-        [Route("post")]
+        [Route("add")]
         public void Post([FromBody] string json)
         {
             ModelCSe cse = new JavaScriptSerializer().Deserialize<ModelCSe>(json);

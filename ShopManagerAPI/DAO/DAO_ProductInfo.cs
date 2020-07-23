@@ -21,5 +21,11 @@ namespace ShopManagerAPI.DAO
             ModelProductInfo productinfo = db.ProductInfo.First(p => p.Id == id);
             return productinfo;
         }
+
+        public void AddNewProduct(ModelProductInfo product)
+        {
+            db.ProductInfo.InsertOnSubmit(product);
+            db.SubmitChanges();
+        }
     }
 }

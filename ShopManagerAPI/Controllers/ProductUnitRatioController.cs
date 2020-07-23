@@ -3,7 +3,6 @@ using ShopManagerAPI.Helpers;
 using ShopManagerAPI.Models;
 using System;
 using System.Collections.Generic;
-using System.Data.Linq;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -12,23 +11,22 @@ using System.Web.Script.Serialization;
 
 namespace ShopManagerAPI.Controllers
 {
-
-    [RoutePrefix("api/product")]
-    public class ProductInfoController : ApiController
+    [RoutePrefix("api/product_unit_ratio")]
+    public class ProductUnitRatioController : ApiController
     {
-        private DAO_ProductInfo ProductInfoDao;
-
-        public ProductInfoController()
-        {
-            ProductInfoDao = new DAO_ProductInfo();
-        }
         // GET api/<controller>
+        DAO_ProductUnitRatio ProductUnitRatioDAO = new DAO_ProductUnitRatio();
+ 
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
 
         [Route("{id}")]
+        // GET api/<controller>/5
         public string Get(int id)
         {
-            ModelProductInfo data = ProductInfoDao.GetById(id);
-            data.RSProductSuppliers.Assign(null);
+            ModelProductUnitRatio data = ProductUnitRatioDAO.GetById(id);
             return JsonHelpers.stringify(data);
         }
 
@@ -36,19 +34,15 @@ namespace ShopManagerAPI.Controllers
         // POST api/<controller>
         public void Post([FromBody] string value)
         {
-            ModelProductInfo product = new JavaScriptSerializer().Deserialize<ModelProductInfo>(value);
-            ProductInfoDao.AddNewProduct(product);
+            ModelProductUnitRatio product = new JavaScriptSerializer().Deserialize<ModelProductUnitRatio>(value);
+            ProductUnitRatioDAO.AddNewProductUnitRatio(product);
         }
 
-
-        [Route("update")]
         // PUT api/<controller>/5
         public void Put(int id, [FromBody] string value)
         {
         }
 
-
-        [Route("delete/{id}")]
         // DELETE api/<controller>/5
         public void Delete(int id)
         {

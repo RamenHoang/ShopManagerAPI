@@ -3,7 +3,6 @@ using ShopManagerAPI.Helpers;
 using ShopManagerAPI.Models;
 using System;
 using System.Collections.Generic;
-using System.Data.Linq;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -12,23 +11,21 @@ using System.Web.Script.Serialization;
 
 namespace ShopManagerAPI.Controllers
 {
-
-    [RoutePrefix("api/product")]
-    public class ProductInfoController : ApiController
+    [RoutePrefix("api/product_unit")]
+    public class ProductUnitController : ApiController
     {
-        private DAO_ProductInfo ProductInfoDao;
-
-        public ProductInfoController()
-        {
-            ProductInfoDao = new DAO_ProductInfo();
-        }
+        DAO_ProductUnit ProductUnitDao = new DAO_ProductUnit();
         // GET api/<controller>
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
 
         [Route("{id}")]
+        // GET api/<controller>/5
         public string Get(int id)
         {
-            ModelProductInfo data = ProductInfoDao.GetById(id);
-            data.RSProductSuppliers.Assign(null);
+            ModelProductUnit data = ProductUnitDao.GetById(id);
             return JsonHelpers.stringify(data);
         }
 
@@ -36,19 +33,15 @@ namespace ShopManagerAPI.Controllers
         // POST api/<controller>
         public void Post([FromBody] string value)
         {
-            ModelProductInfo product = new JavaScriptSerializer().Deserialize<ModelProductInfo>(value);
-            ProductInfoDao.AddNewProduct(product);
+            ModelProductUnit product = new JavaScriptSerializer().Deserialize<ModelProductUnit>(value);
+            ProductUnitDao.AddNewProductUnit(product);
         }
 
-
-        [Route("update")]
         // PUT api/<controller>/5
         public void Put(int id, [FromBody] string value)
         {
         }
 
-
-        [Route("delete/{id}")]
         // DELETE api/<controller>/5
         public void Delete(int id)
         {

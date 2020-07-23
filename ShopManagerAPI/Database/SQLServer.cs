@@ -18,12 +18,19 @@ namespace ShopManagerAPI.Database
         public Table<ModelCS> CS;
         public Table<ModelCSe> CSe;
         public Table<ModelProductInfo> ProductInfo;
+        public Table<ModelProductUnitRatio> ProductUnitRatio;
+        public Table<ModelSellingPrice> SellingPrice;
+        public Table<ModelProductUnit> ProductUnit;
+        public Table<ModelSupplier> Supplier;
+        public Table<ModelSupplierInvoice> SupplierInvoice;
+
         private static SQLServer DB = null;
         
         public SQLServer() : base(MyConst.connString)
         {
 
         }
+
         public static SQLServer getDB()
         {
             if(DB == null)
