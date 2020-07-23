@@ -17,19 +17,19 @@ namespace ShopManagerAPI.DAO
 
         public List<ModelSupplier> GetAll()
         {
-            List<ModelSupplier> suppliers = (List<ModelSupplier>)db.Suplier.Take(100);
+            List<ModelSupplier> suppliers = (List<ModelSupplier>)db.Supplier.Take(100);
             return suppliers;
         }
 
         public ModelSupplier GetById(int id)
         {
-            ModelSupplier supplier = db.Suplier.First(s => s.Id == id);
+            ModelSupplier supplier = db.Supplier.First(s => s.Id == id);
             return supplier;
         }
 
         public void AddNew(ModelSupplier supplier)
         {
-            db.Suplier.InsertOnSubmit(supplier);
+            db.Supplier.InsertOnSubmit(supplier);
             db.SubmitChanges();
         }
     }
