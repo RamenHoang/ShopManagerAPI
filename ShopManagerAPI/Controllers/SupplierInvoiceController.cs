@@ -11,7 +11,7 @@ using System.Web.Script.Serialization;
 
 namespace ShopManagerAPI.Controllers
 {
-    [RoutePrefix("/api/supplier_invoice")]
+    [RoutePrefix("api/supplier_invoice")]
     public class SupplierInvoiceController : ApiController
     {
         DAO_SupplierInvoice SupplierInvoiceDAO = new DAO_SupplierInvoice();
