@@ -1,50 +1,43 @@
-﻿using ShopManagerAPI.DAO;
-using ShopManagerAPI.Helpers;
-using ShopManagerAPI.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using ShopManagerAPI.DAO;
+using ShopManagerAPI.Models;
+using ShopManagerAPI.Helpers;
 using System.Web.Script.Serialization;
 
-namespace ShopManagerAPI.Controllers
+namespace ShopManagerAPI.SupplierController
 {
     [RoutePrefix("api/supplier")]
     public class SupplierController : ApiController
     {
-        DAO_Supplier SupplierDAO = new DAO_Supplier();
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        private DAO_Supplier SupplierDAO;
+
+        public SupplierController()
         {
-            return new string[] { "value1", "value2" };
+            SupplierDAO = new DAO_Supplier();
+        }
+
+        [Route("")]
+        public string Get()
+        {
+            List<ModelSupplier> suppliers = SupplierDAO.GetAll();
+            return JsonHelpers.stringify(suppliers);
         }
 
         [Route("{id}")]
-        // GET api/<controller>/5
-        public string Get(int id)
+        public string GetById(int id)
         {
-            ModelSupplier data = SupplierDAO.GetById(id);
-            return JsonHelpers.stringify(data);
+            ModelSupplier supplier = SupplierDAO.GetById(id);
+            return JsonHelpers.stringify(supplier);
         }
 
-        [Route("add")]
-        // POST api/<controller>
-        public void Post([FromBody] string value)
+        [Route("")]
+        public void Post([FromBody] string json)
         {
-            ModelSupplier supplier = new JavaScriptSerializer().Deserialize<ModelSupplier>(value);
-            SupplierDAO.AddNewSupplier(supplier);
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
+            ModelSupplier supplier = new JavaScriptSerializer().Deserialize<ModelSupplier>(json);
+            SupplierDAO.AddNew(supplier);
         }
     }
 }

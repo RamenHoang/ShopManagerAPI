@@ -13,7 +13,7 @@ namespace ShopManagerAPI.Models
     {
         private EntityRef<ModelProductInfo> _ProductInfo = new EntityRef<ModelProductInfo>();
         private EntityRef<ModelProductUnit> _ProductUnit = new EntityRef<ModelProductUnit>();
-        private EntityRef<ModelPresciption> _Prescription = new EntityRef<ModelPresciption>();
+        private EntityRef<ModelPrescription> _Prescription = new EntityRef<ModelPrescription>();
 
         [Column(Name = "", IsPrimaryKey = true)]
         public int? id;
@@ -34,7 +34,7 @@ namespace ShopManagerAPI.Models
         public string Comment { get; set; }
 
         [Association(Name = MyConst.FK_PERSCRIPTION_CONTENT_TO_PERSCRIPTION, IsForeignKey = true, Storage = "_Prescription", ThisKey = "IdPrescription")]
-        public ModelPresciption ProductInfo
+        public ModelPrescription ProductInfo
         {
             get
             {

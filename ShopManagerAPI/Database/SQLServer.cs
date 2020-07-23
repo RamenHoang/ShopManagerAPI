@@ -22,7 +22,11 @@ namespace ShopManagerAPI.Database
         public Table<ModelSellingPrice> SellingPrice;
         public Table<ModelProductUnit> ProductUnit;
         public Table<ModelSupplier> Supplier;
+        public Table<ModelProductInfo> ProductInfo;
+        public Table<ModelLocation> Location;
         public Table<ModelSupplierInvoice> SupplierInvoice;
+        public Table<ModelPrescription> Prescription;
+        public Table<ModelInputPrice> InputPrice;
 
         private static SQLServer DB = null;
         

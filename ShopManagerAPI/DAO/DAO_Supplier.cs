@@ -1,9 +1,8 @@
-﻿using ShopManagerAPI.Database;
-using ShopManagerAPI.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using ShopManagerAPI.Database;
+using ShopManagerAPI.Models;
 using System.Linq;
-using System.Web;
 
 namespace ShopManagerAPI.DAO
 {
@@ -13,18 +12,24 @@ namespace ShopManagerAPI.DAO
 
         public DAO_Supplier()
         {
-            this.db = SQLServer.getDB();
+            db = SQLServer.getDB();
+        }
+
+        public List<ModelSupplier> GetAll()
+        {
+            List<ModelSupplier> suppliers = (List<ModelSupplier>)db.Suplier.Take(100);
+            return suppliers;
         }
 
         public ModelSupplier GetById(int id)
         {
-            ModelSupplier supplier = db.Supplier.First(p => p.Id == id);
+            ModelSupplier supplier = db.Suplier.First(s => s.Id == id);
             return supplier;
         }
 
-        public void AddNewSupplier(ModelSupplier supplier)
+        public void AddNew(ModelSupplier supplier)
         {
-            db.Supplier.InsertOnSubmit(supplier);
+            db.Suplier.InsertOnSubmit(supplier);
             db.SubmitChanges();
         }
     }

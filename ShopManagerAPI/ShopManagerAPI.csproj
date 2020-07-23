@@ -160,10 +160,18 @@
     <Compile Include="Models\ModelSellingPrice.cs" />
     <Compile Include="Models\ModelSupplier.cs" />
     <Compile Include="Models\ModelLocation.cs" />
-    <Compile Include="Models\ModelPresciption.cs" />
+    <Compile Include="Models\ModelPrescription.cs" />
     <Compile Include="Models\ModelPrescriptionContent.cs" />
     <Compile Include="Models\ModelProductUnitRatio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\LocationController.cs" />
+    <Compile Include="DAO\DAO_Location.cs" />
+    <Compile Include="DAO\DAO_Supplier.cs" />
+    <Compile Include="DAO\DAO_Prescription.cs" />
+    <Compile Include="DAO\DAO_InputPrice.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
+    <Compile Include="Controllers\PrescriptionController.cs" />
+    <Compile Include="Controllers\InputPriceController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -209,6 +217,11 @@
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

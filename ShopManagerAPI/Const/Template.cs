@@ -33,5 +33,6 @@ namespace ShopManagerAPI.Const
         public const string FK_PRODUCT_UNIT_RATIO_TO_PRODUCT_INFO = "***";
         public const string FK_PRODUCT_UNIT_RATIO_TO_PRODUCT_UNIT = "***";
         public const string FK_SUPPLIER_INVOICE_TO_SUPPLIER = "***";
+        public static string connString = "***";
     }
 }
